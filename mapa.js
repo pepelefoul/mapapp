@@ -239,7 +239,7 @@ function initMap() {
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
         } else {
-            map.setCenter(place.geometry.location);
+            map.setCenter(new google.maps.LatLng((lat + offsetLat) , lng));
             map.setZoom(17); // Why 17? Because it looks good.
         }
         marker.setPosition(place.geometry.location);
