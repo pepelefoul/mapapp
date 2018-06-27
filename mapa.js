@@ -250,6 +250,9 @@ function initMap() {
         }
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);
+        function hidden(){    
+            document.getElementById('sombreado').style.display = 'none';
+        }
 
         var address = '';
         if (place.address_components) {
