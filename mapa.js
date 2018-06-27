@@ -272,7 +272,7 @@ function initMap() {
     infowindowContent.children['place-address'].textContent = address;
     infowindowContent.children['district'].innerHTML = districtOutput;
     infowindow.open(map, marker);
-});
+}
 
 // Sets a listener on a radio button to change the filter type on Places
 // Autocomplete.
