@@ -23,6 +23,54 @@ html, body {
   display: inline;
 }
 
+.infowindow-box {
+    text-align: center;
+    background-color: #af286f;
+    padding: 15px 20px
+}
+
+.infowindow-txt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff
+}
+
+a {
+    text-decoration: none
+}
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+  
+#sombreado {
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    padding: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+#sombreado.hidden {
+    display: none;
+}
 
 .pac-card {
   border-radius: 8px;
@@ -36,6 +84,9 @@ html, body {
   text-align: center;
   width: 90%;
   margin-right: 20px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 #pac-container {
@@ -89,53 +140,4 @@ html, body {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #6bc2ca;
     opacity: 1; /* Firefox */
-}
-
-.infowindow-box {
-    text-align: center;
-    background-color: #af286f;
-    padding: 15px 20px
-}
-
-.infowindow-txt {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff
-}
-
-a {
-    text-decoration: none
-}
-.wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-#map {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-  
-#sombreado {
-    /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0);
-    /* RGBa with 0.6 opacity */
-    background: rgba(0, 0, 0, 0.6);
-    /* For IE 5.5 - 7*/
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-    padding: 100%;
-    top: 0px;
-    left: 0px;
-    position: absolute;
-}
-
-#sombreado.hidden {
-    display: none;
 }
