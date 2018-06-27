@@ -294,5 +294,4 @@ document.getElementById('use-strict-bounds')
         autocomplete.setOptions({
             strictBounds: this.checked
         });
-    });
 }
