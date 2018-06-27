@@ -112,6 +112,7 @@ a {
 #map {
   height: 100%;
   position: relative;
+  z_index: -4;
 }
   
 #sombreado {
@@ -127,6 +128,7 @@ a {
     margin: 0;
     padding: 0;
     position: absolute;
+    z-index:10;
 }
 
 #sombreado.hidden {
