@@ -260,7 +260,7 @@ function initMap() {
     }
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
- 
+
     var address = '';
     if (place.address_components) {
       address = [
