@@ -260,8 +260,17 @@ function initMap() {
     }
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
-   
-	   var lat = response.data.results[0].geometry.location.lat;
+   	  
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+    }
+
+	  var lat = response.data.results[0].geometry.location.lat;
               var lng = response.data.results[0].geometry.location.lng;
               const curPosition = new google.maps.LatLng(lat,lng);
               //Get Local District
@@ -281,19 +290,7 @@ function initMap() {
                 </div>
               `;
               var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
-             
-
 	  
-	  
-    var address = '';
-    if (place.address_components) {
-      address = [
-        (place.address_components[0] && place.address_components[0].short_name || ''),
-        (place.address_components[1] && place.address_components[1].short_name || ''),
-        (place.address_components[2] && place.address_components[2].short_name || '')
-      ].join(' ');
-    }
-
     infowindowContent.children['place-icon'].src = place.icon;
     infowindowContent.children['place-name'].textContent = place.name;
     infowindowContent.children['place-address'].textContent = address;
