@@ -222,7 +222,7 @@ function initMap() {
         //Generate button with candidates
         var rute = checkCombination(dL,dF);
         console.log(rute);
-        var ruteOutput = "<a href="${rute}">" + "<div class='infowindow-box'>" + "<span class='infowindow-txt' id='infowindow-link'>"  + "Ve Quiénes Te Representan" + "</span>" + "</div>" + "</a>";
+        var ruteOutput = "<a href='${rute}'>" + "<div class='infowindow-box'>" + "<span class='infowindow-txt' id='infowindow-link'>"  + "Ve Quiénes Te Representan" + "</span>" + "</div>" + "</a>";
         var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
 
         if (!place.geometry) {
