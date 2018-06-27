@@ -117,6 +117,7 @@ a {
  * element that contains the map. */
 #map {
   height: 100%;
+  width: 100%;
   position: absolute;
 }
   
