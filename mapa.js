@@ -276,8 +276,8 @@ function initMap() {
                          if (status == google.maps.GeocoderStatus.OK) {
                              console.log(results);
                              var lat = results[0].geometry.location.lat(),
-                                 lng = results[0].geometry.location.lng(),
-				 const curPosition = new google.maps.LatLng(lat,lng);
+                             var lng = results[0].geometry.location.lng(),
+			     const curPosition = new google.maps.LatLng(lat,lng);
               //Get Local District
               var localDistrict = getLocalDistrict(curPosition);
               var localDistrictOutput = `<h1>Tu distrito local es el ${localDistrict}</h1>`;
