@@ -2,9 +2,7 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var locationForm = document.getElementById('pac-input');
-      locationForm.addEventListener('submit',geocode);
-      var dL, dF = 0;
+     var dL, dF = 0;
 
 function initMap() {
 	var styledMapType = new google.maps.StyledMapType(
