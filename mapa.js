@@ -222,11 +222,7 @@ function initMap() {
         //Generate button with candidates
         var rute = checkCombination(dL,dF);
         console.log(rute);
-        var ruteOutput = `
-          <div>
-            <a class="btn btn-large btn-info" href="${rute}">Conoce a tus candidatos</a>
-          </div>
-        `;
+        var ruteOutput = "<a href="${rute}">" + "<div class='infowindow-box'>" + "<span class='infowindow-txt' id='infowindow-link'>"  + "Ve Quiénes Te Representan" + "</span>" + "</div>" + "</a>";
         var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
 
         if (!place.geometry) {
@@ -255,10 +251,7 @@ function initMap() {
             ].join(' ');
         }
 
-        infowindowContent.children['place-icon'].src = place.icon;
-        infowindowContent.children['place-name'].textContent = place.name;
-        infowindowContent.children['place-address'].textContent = address;
-        infowindowContent.children['district'].innerHTML = districtOutput;
+        infowindowContent.children['district'].innerHTML = ruteOutput;
         infowindow.open(map, marker);
     });
 
