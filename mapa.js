@@ -1,8 +1,6 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var dL, dF = 0;
-
 function initMap() {
     var styledMapType = new google.maps.StyledMapType(
         [{
@@ -216,82 +214,43 @@ function initMap() {
             map.setCenter(place.geometry.location);
             map.setZoom(17); // Why 17? Because it looks good.
         }
-        moveMarker(place.name, place.geometry.location);
-        $('.MapLat').val(place.geometry.location.lat());
-        $('.MapLon').val(place.geometry.location.lng());
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+        var address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+        }
+
+        infowindowContent.children['place-icon'].src = place.icon;
+        infowindowContent.children['place-name'].textContent = place.name;
+        infowindowContent.children['place-address'].textContent = address;
+        infowindow.open(map, marker);
     });
-    google.maps.event.addListener(map, 'click', function(event) {
-        $('.MapLat').val(event.latLng.lat());
-        $('.MapLon').val(event.latLng.lng());
-        infowindow.close();
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({
-            "latLng": event.latLng
-        }, function(results, status) {
-            console.log(results, status);
-            if (status == google.maps.GeocoderStatus.OK) {
-                console.log(results);
-                var lat = results[0].geometry.location.lat();
-                var lng = results[0].geometry.location.lng();
-                const curPosition = new google.maps.LatLng(lat, lng);
-                //Get Local District
-                var localDistrict = getLocalDistrict(curPosition);
-                var localDistrictOutput = `<h1>Tu distrito local es el ${localDistrict}</h1>`;
-                dL = localDistrict;
-                //Get Federal District
-                var federalDistrict = getFederalDistrict(curPosition);
-                var federalDistrictOutput = `<br><h1>Tu distrito federal es el ${federalDistrict}</h1>`;
-                dF = federalDistrict;
-                //Generate button with candidates
-                var rute = checkCombination(dL, dF);
-                console.log(rute);
-                var ruteOutput = `
-                <div>
-                  <a class="btn btn-large btn-info" href="${rute}">Conoce a tus candidatos</a>
-                </div>
-              `;
-                var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
-            }
+
+    // Sets a listener on a radio button to change the filter type on Places
+    // Autocomplete.
+    function setupClickListener(id, types) {
+        var radioButton = document.getElementById(id);
+        radioButton.addEventListener('click', function() {
+            autocomplete.setTypes(types);
         });
-    });
-
-    marker.setPosition(place.geometry.location);
-    marker.setVisible(true);
-
-    var address = '';
-    if (place.address_components) {
-        address = [
-            (place.address_components[0] && place.address_components[0].short_name || ''),
-            (place.address_components[1] && place.address_components[1].short_name || ''),
-            (place.address_components[2] && place.address_components[2].short_name || '')
-        ].join(' ');
     }
 
-    infowindowContent.children['place-icon'].src = place.icon;
-    infowindowContent.children['place-name'].textContent = place.name;
-    infowindowContent.children['place-address'].textContent = address;
-    infowindowContent.children['district'].innerHTML = districtOutput;
-    infowindow.open(map, marker);
-}
+    setupClickListener('changetype-all', []);
+    setupClickListener('changetype-address', ['address']);
+    setupClickListener('changetype-establishment', ['establishment']);
+    setupClickListener('changetype-geocode', ['geocode']);
 
-// Sets a listener on a radio button to change the filter type on Places
-// Autocomplete.
-function setupClickListener(id, types) {
-    var radioButton = document.getElementById(id);
-    radioButton.addEventListener('click', function() {
-        autocomplete.setTypes(types);
-    });
-}
-
-setupClickListener('changetype-all', []);
-setupClickListener('changetype-address', ['address']);
-setupClickListener('changetype-establishment', ['establishment']);
-setupClickListener('changetype-geocode', ['geocode']);
-
-document.getElementById('use-strict-bounds')
-    .addEventListener('click', function() {
-        console.log('Checkbox clicked! New state=' + this.checked);
-        autocomplete.setOptions({
-            strictBounds: this.checked
+    document.getElementById('use-strict-bounds')
+        .addEventListener('click', function() {
+            console.log('Checkbox clicked! New state=' + this.checked);
+            autocomplete.setOptions({
+                strictBounds: this.checked
+            });
         });
 }
