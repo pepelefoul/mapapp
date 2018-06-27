@@ -97,13 +97,14 @@ html, body {
 
 .infowindow-box {
     text-align: center;
-    background-color: #ff6766;
+    background-color: #af286f;
     padding: 15px 20px
 }
 
 .infowindow-txt {
-    font-family: "Roboto";
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    font-weight: 700;
-    color: white
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none
 }
