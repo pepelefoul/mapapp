@@ -1,0 +1,23 @@
+<div class="pac-card" id="pac-card">
+  <div>
+    <div id="title">
+      Busca por quienes puedes votar
+    </div>
+    <div id="strict-bounds-selector" class="pac-controls">
+      
+    </div>
+  </div>
+  <div id="pac-container">
+    <input id="pac-input" type="text"
+        placeholder="Ingresa tu calle y colonia">
+  </div>
+</div>
+<div id="map"></div>
+<div id="infowindow-content">
+  <img src="" width="16" height="16" id="place-icon">
+  <span id="place-name"  class="title"></span><br>
+  <span id="place-address"></span>
+</div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&libraries=places&callback=initMap"
+        async defer></script>
