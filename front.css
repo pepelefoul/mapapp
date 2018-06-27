@@ -2,7 +2,7 @@
  * element that contains the map. */
 #map {
   height: 100%;
-  z-index: -1
+  position: relative
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -125,7 +125,7 @@ a {
     height: 100%;
     margin: 0;
     padding: 0;
-    position: absolute;
+    position: relative
 }
 
 #sombreado.hidden {
