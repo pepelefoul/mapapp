@@ -105,6 +105,10 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    color: #fff;
+    color: #fff
+}
+
+a {
     text-decoration: none
 }
+  
