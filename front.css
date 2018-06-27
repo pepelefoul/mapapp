@@ -92,22 +92,34 @@ a {
 #pac-container {
   padding-bottom: 12px;
   margin-right: 12px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
  
 }
 
 #merde {
   margin: 0 auto;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 .pac-controls {
   display: inline-block;
   padding: 5px 11px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 .pac-controls label {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 13px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 #pac-input {
@@ -122,10 +134,16 @@ a {
   width: 80%;
   height: 40px;
   text-align: center;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 #pac-input:focus {
   border-color: #6bc2ca;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 #title {
@@ -135,9 +153,15 @@ a {
   font-weight: 500;
   padding: 6px 12px;
   margin: 0 auto;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #6bc2ca;
     opacity: 1; /* Firefox */
+    top: 0px;
+    left: 0px;
+    position: absolute;
 }
