@@ -94,3 +94,16 @@ html, body {
     color: #6bc2ca;
     opacity: 1; /* Firefox */
 }
+
+.infowindow-box {
+    text-align: center;
+    background-color: #ff6766;
+    padding: 15px 20px
+}
+
+.infowindow-txt {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 700;
+    color: white
+}
