@@ -260,7 +260,31 @@ function initMap() {
     }
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
+   
+	   var lat = response.data.results[0].geometry.location.lat;
+              var lng = response.data.results[0].geometry.location.lng;
+              const curPosition = new google.maps.LatLng(lat,lng);
+              //Get Local District
+              var localDistrict = getLocalDistrict(curPosition);
+              var localDistrictOutput = `<h1>Tu distrito local es el ${localDistrict}</h1>`;
+              dL = localDistrict;
+              //Get Federal District
+              var federalDistrict = getFederalDistrict(curPosition);
+              var federalDistrictOutput = `<br><h1>Tu distrito federal es el ${federalDistrict}</h1>`;
+              dF = federalDistrict;
+              //Generate button with candidates
+              var rute = checkCombination(dL,dF);
+              console.log(rute);
+              var ruteOutput = `
+                <div>
+                  <a class="btn btn-large btn-info" href="${rute}">Conoce a tus candidatos</a>
+                </div>
+              `;
+              var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
+             
 
+	  
+	  
     var address = '';
     if (place.address_components) {
       address = [
@@ -273,6 +297,7 @@ function initMap() {
     infowindowContent.children['place-icon'].src = place.icon;
     infowindowContent.children['place-name'].textContent = place.name;
     infowindowContent.children['place-address'].textContent = address;
+    infowindowContent.children['district'].innerHTML = districtOutput;
     infowindow.open(map, marker);
   });
 
