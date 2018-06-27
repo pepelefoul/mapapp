@@ -112,7 +112,7 @@ a {
     text-decoration: none
 }
   
-.sombreado {
+#sombreado {
     /* Fallback for web browsers that doesn't support RGBa */
     background: rgb(0, 0, 0);
     /* RGBa with 0.6 opacity */
@@ -126,6 +126,6 @@ a {
     padding: 0;
 }
 
-.sombreado.hidden {
+#sombreado.hidden {
     display: none;
 }
