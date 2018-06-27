@@ -1,7 +1,10 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+var dL, dF = 0;
+
 function initMap() {
+    //Mapa personalizado gris
     var styledMapType = new google.maps.StyledMapType(
         [{
                 "elementType": "geometry",
@@ -161,6 +164,7 @@ function initMap() {
         ], {
             name: 'Styled Map'
         });
+    //Mapa nuevo
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: 28.665208,
@@ -200,6 +204,30 @@ function initMap() {
         infowindow.close();
         marker.setVisible(false);
         var place = autocomplete.getPlace();
+        var lat = place.geometry.location.lat();
+        var lng = place.geometry.location.lng();
+        const curPosition = new google.maps.LatLng(lat,lng);
+        
+        //Get Local District
+        var localDistrict = getLocalDistrict(curPosition);
+        var localDistrictOutput = `<h1>Tu distrito local es el ${localDistrict}</h1>`;
+        dL = localDistrict;
+
+        //Get Federal District
+        var federalDistrict = getFederalDistrict(curPosition);
+        var federalDistrictOutput = `<br><h1>Tu distrito federal es el ${federalDistrict}</h1>`;
+        dF = federalDistrict;
+
+        //Generate button with candidates
+        var rute = checkCombination(dL,dF);
+        console.log(rute);
+        var ruteOutput = `
+          <div>
+            <a class="btn btn-large btn-info" href="${rute}">Conoce a tus candidatos</a>
+          </div>
+        `;
+        var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
+
         if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
             // pressed the Enter key, or the Place Details request failed.
