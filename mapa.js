@@ -2,6 +2,10 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+      var locationForm = document.getElementById('pac-input');
+      locationForm.addEventListener('submit',geocode);
+      var dL, dF = 0;
+
 function initMap() {
 	var styledMapType = new google.maps.StyledMapType(
   [
@@ -269,7 +273,28 @@ function initMap() {
         (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
     }
-  	  
+  	
+	    var lat = response.data.results[0].geometry.location.lat;
+              var lng = response.data.results[0].geometry.location.lng;
+              const curPosition = new google.maps.LatLng(lat,lng);
+              //Get Local District
+              var localDistrict = getLocalDistrict(curPosition);
+              var localDistrictOutput = `<h1>Tu distrito local es el ${localDistrict}</h1>`;
+              dL = localDistrict;
+              //Get Federal District
+              var federalDistrict = getFederalDistrict(curPosition);
+              var federalDistrictOutput = `<br><h1>Tu distrito federal es el ${federalDistrict}</h1>`;
+              dF = federalDistrict;
+              //Generate button with candidates
+              var rute = checkCombination(dL,dF);
+              console.log(rute);
+              var ruteOutput = `
+                <div>
+                  <a class="btn btn-large btn-info" href="${rute}">Conoce a tus candidatos</a>
+                </div>
+              `;
+              var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
+	  
     infowindowContent.children['place-icon'].src = place.icon;
     infowindowContent.children['place-name'].textContent = place.name;
     infowindowContent.children['place-address'].textContent = address;
