@@ -257,6 +257,7 @@ function initMap() {
         infowindowContent.children['place-icon'].src = place.icon;
         infowindowContent.children['place-name'].textContent = place.name;
         infowindowContent.children['place-address'].textContent = address;
+        infowindowContent.children['district'].innerHTML = districtOutput;
         infowindow.open(map, marker);
     });
 
