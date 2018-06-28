@@ -250,10 +250,9 @@ function initMap() {
             map.setZoom(17); // Why 17? Because it looks good.
         }
         marker.setPosition(place.geometry.location);
-        marker.setVisible(true);
-        function hidden(){    
-            document.getElementById('sombreado').style.display = 'none';
-        }
+        marker.setVisible(true);  
+        document.getElementById('sombreado').style.display = 'none';
+
 
         var address = '';
         if (place.address_components) {
