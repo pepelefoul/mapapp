@@ -195,7 +195,9 @@ function initMap() {
     // bounds option in the request.
     autocomplete.bindTo('bounds', map);
 
-    var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+        disableAutoPan: true
+    });
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
     var iconBase = 'img/';
@@ -211,7 +213,7 @@ function initMap() {
         var place = autocomplete.getPlace();
         var lat = place.geometry.location.lat();
         var lng = place.geometry.location.lng();
-        var offsetLat = 0.02;
+        var offsetLat = -0.02;
         const curPosition = new google.maps.LatLng(lat,lng);
         
         //Get Local District
