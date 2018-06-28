@@ -44,7 +44,6 @@ a {
   width: 100%;
   height: 100%;
   */
-    position: relative;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -52,12 +51,13 @@ a {
 #map {
   height: 100%;
   width: 100%;
+  position: relative;
 
 }
   
 #sombreado {
     /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0.6);
     /* RGBa with 0.6 opacity */
     background: rgba(0, 0, 0, 0.6);
     /* For IE 5.5 - 7*/
