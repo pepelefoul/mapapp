@@ -230,7 +230,7 @@ function initMap() {
         var ruteOutput = `
           <a href="${rute}"">
             <div class="infowindow-box">
-              <span class="infowindow-txt" id="infowindow-link"> Ve Quiénes Te Representan </span>
+              <span class="infowindow-txt" id="infowindow-link"> Ve las candidaturas </span>
             </div>
           </a>`;
         var districtOutput = localDistrictOutput + federalDistrictOutput + ruteOutput;
