@@ -248,6 +248,8 @@ function initMap() {
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
         } else {
+            infowindowContent.children['district'].innerHTML = ruteOutput;
+            infowindow.open(map, marker);
             map.setCenter(new google.maps.LatLng((lat + offsetLat) , lng));
             setTimeout(moveMap, 10);
             map.setZoom(17); // Why 17? Because it looks good.
@@ -266,8 +268,8 @@ function initMap() {
             ].join(' ');
         }
 
-        infowindowContent.children['district'].innerHTML = ruteOutput;
-        infowindow.open(map, marker);
+        
+        
         
         function moveMap() {
             map.panBy(0, -200);
