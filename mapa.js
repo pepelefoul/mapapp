@@ -250,6 +250,8 @@ function initMap() {
             map.fitBounds(place.geometry.viewport);
             console.log("la latitud es " + lat);
             console.log(lng);
+            map.setCenter(new google.maps.LatLng((lat + offsetLat), lng));
+            map.setZoom(17); // Why 17? Because it looks good.
         } else {
             console.log(lat);
             console.log(lng);
