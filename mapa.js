@@ -196,7 +196,10 @@ function initMap() {
     autocomplete.bindTo('bounds', map);
 
     var infowindow = new google.maps.InfoWindow({
-        disableAutoPan: true
+        {
+            pixelOffset: new google.maps.Size(0, -10),
+            disableAutoPan: true
+        }
     });
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
@@ -248,7 +251,7 @@ function initMap() {
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
         } else {
-            
+            map.setCenter(new google.maps.LatLng((map.getCenter().lat() + offsetLat), map.getCenter().lng());
             map.setZoom(17); // Why 17? Because it looks good.
         }
         marker.setPosition(place.geometry.location);
@@ -266,8 +269,8 @@ function initMap() {
         }
 
         infowindowContent.children['district'].innerHTML = ruteOutput;
+        
         infowindow.open(map, marker);
-        map.setCenter(new google.maps.LatLng((lat + offsetLat) , lng));
     });
 
     // Sets a listener on a radio button to change the filter type on Places
