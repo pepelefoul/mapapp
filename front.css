@@ -62,7 +62,7 @@ a {
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     /* For IE 8*/
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-    padding: 100%;
+    /*padding: 100%;*/
     top: 0px;
     left: 0px;
     position: absolute;
