@@ -65,12 +65,12 @@ a {
     padding: 100%;
     top: 0px;
     left: 0px;
-    /*position: absolute;*/
+    position: absolute;
 }
 
-#sombreado.hidden {
+/*#sombreado.hidden {
     display: none;
-}
+}*/
 
 .pac-card {
   border-radius: 8px;
