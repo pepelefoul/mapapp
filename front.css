@@ -44,6 +44,7 @@ a {
   width: 100%;
   height: 100%;
   */
+    position: relative;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -51,7 +52,7 @@ a {
 #map {
   height: 100%;
   width: 100%;
-  position: relative;
+
 }
   
 #sombreado {
@@ -64,9 +65,12 @@ a {
     /* For IE 8*/
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
     /*padding: 100%;*/
+    width:100%;
+    height:100%;
     top: 0px;
     left: 0px;
     position: absolute;
+    z-index: 99;
 }
 
 /*#sombreado.hidden {
