@@ -198,7 +198,6 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow({
             pixelOffset: new google.maps.Size(0, -10),
             disableAutoPan: true
-        }
     });
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
