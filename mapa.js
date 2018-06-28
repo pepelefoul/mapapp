@@ -196,7 +196,6 @@ function initMap() {
     autocomplete.bindTo('bounds', map);
 
     var infowindow = new google.maps.InfoWindow({
-        {
             pixelOffset: new google.maps.Size(0, -10),
             disableAutoPan: true
         }
