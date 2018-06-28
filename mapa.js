@@ -1,20 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @renemoreno Sign out
-1
-0 0 renemoreno/mapapp
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-mapapp/mapa.js
-f72c37f  4 hours ago
-@renemoreno renemoreno Update mapa.js
-     
-292 lines (275 sloc)  9.57 KB
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
