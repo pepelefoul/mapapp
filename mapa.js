@@ -195,7 +195,9 @@ function initMap() {
     // bounds option in the request.
     autocomplete.bindTo('bounds', map);
 
-    var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+        disableAutoPan: true
+    });
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
     var iconBase = 'img/';
@@ -246,19 +248,25 @@ function initMap() {
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
         } else {
-            infowindowContent.children['district'].innerHTML = ruteOutput;
-            infowindow.open(map, marker);
-            map.setCenter(marker.getPosition());
-            setTimeout(moveMap, 10);
+            map.setCenter(new google.maps.LatLng((lat + offsetLat) , lng));
             map.setZoom(17); // Why 17? Because it looks good.
         }
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);  
         document.getElementById('sombreado').style.display = 'none';
-        function moveMap() {
-            map.panBy(0, -200);
+
+
+        var address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
         }
 
+        infowindowContent.children['district'].innerHTML = ruteOutput;
+        infowindow.open(map, marker);
     });
 
     // Sets a listener on a radio button to change the filter type on Places
