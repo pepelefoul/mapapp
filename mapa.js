@@ -248,6 +248,8 @@ function initMap() {
         // If the place has a geometry, then present it on a map.
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
+            console.log("la latitud es " + lat);
+            console.log(lng);
         } else {
             console.log(lat);
             console.log(lng);
