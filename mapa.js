@@ -251,9 +251,6 @@ function initMap() {
             map.setCenter(new google.maps.LatLng((lat + offsetLat) , lng));
             map.setZoom(17); // Why 17? Because it looks good.
         }
-        var infowindow = new google.maps.InfoWindow({
-            disableAutoPan: true
-        });
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);  
         document.getElementById('sombreado').style.display = 'none';
