@@ -40,10 +40,10 @@ a {
     text-decoration: none
 }
 .wrap {
-  /*position: relative;
+  /*position: relative;*/
   width: 100%;
   height: 100%;
-  */
+  
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -57,9 +57,10 @@ a {
   
 #sombreado {
     /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0.6);
+    /*background: rgb(0, 0, 0.6);*/
     /* RGBa with 0.6 opacity */
-    background: rgba(0, 0, 0, 0.6);
+    /*background: rgba(0, 0, 0, 0.6);*/
+    background: red;
     /* For IE 5.5 - 7*/
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     /* For IE 8*/
