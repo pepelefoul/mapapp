@@ -1,0 +1,51 @@
+body {
+	position: relative;
+	height:100%;
+	width:100%;
+}
+
+/* Nav Bar */
+#NavbarWrap {
+	position: absolute;
+	width: 100%;
+	height: 48px;
+	left: 0px;
+	top: 0px;
+
+	background-color: #69c2ca;
+}
+
+#DimeQuienLogo {
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	top: 6px;
+	right: 18px;
+
+	background: url(DQlogo.png);
+}
+
+#Back {
+	position: absolute;
+	width: 13px;
+	height:13px;
+	left: 18px;
+	top:10px;
+
+	background: url(back.png);
+}
+
+
+/* Content */
+#IntroText {
+	position: absolute;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	font-size: 18px;
+	text-align: center;
+
+	color: #231F20;
+}
