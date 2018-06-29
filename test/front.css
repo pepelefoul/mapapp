@@ -158,3 +158,17 @@ a {
     opacity: 1; /* Firefox */
     /*position: absolute;*/
 }
+
+# textoInfo {
+  color:#6bc2ca;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-left: 0px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 80%;
+  height: 40px;
+  text-align: center;
+}
