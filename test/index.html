@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="LinkSake/Wikipolitica/ISAD">
+
+    <title>Dime Quien</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
+    <link href="../front.css" rel="stylesheet">
+    
+     <!-- Used to send GET requests to Google Map's API -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- District checks -->
+    <script type="text/javascript" src="../js/localDistricts.js"></script>
+    <script type="text/javascript" src="../js/federalDistricts.js"></script>
+    <script type="text/javascript" src="../js/districtCombination.js"></script>
+    
+  </head>
+
+  <body>
+
+<div class="wrap">    
+  <div id="map"></div>
+  <div id="sombreado"></div>
+  <div class="pac-card" id="pac-card">
+  <div class="cartas">
+    <div id="title">
+      Te decimos por quien puedes votar
+    </div>
+    <div id="strict-bounds-selector" class="pac-controls">
+      
+    </div>
+  </div>
+  <div id="pac-container">
+    <input id="pac-input" type="text"
+        placeholder="Solo escribe tu dirección">
+  </div>
+</div>
+</div>
+   
+<div id="infowindow-content">
+  <span id="district"></span>
+</div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ITU2BKyaQaIlI8bwlXafmjc_YWcJTmA&libraries=geometry,places&callback=initMap"
+        async defer></script>
+<script type="text/javascript" src="../mapa.js"></script>
+  </body>
+  </HTML>
