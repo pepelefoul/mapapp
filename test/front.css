@@ -1,0 +1,160 @@
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.infowindow-box {
+    text-align: center;
+    background-color: #af286f;
+    padding: 15px 20px
+}
+
+.infowindow-txt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff
+}
+
+a {
+    text-decoration: none
+}
+.wrap {
+  /*position: relative;*/
+  width: 100%;
+  height: 100%;
+  
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+}
+  
+#sombreado {
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(0, 0, 0.6);
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    /*padding: 100%;*/
+    width:100%;
+    height:100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 99;
+}
+
+#sombreado.hidden {
+    display: none;
+}
+
+.pac-card {
+  border-radius: 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+  margin-right: 0px;
+  top: 0px;
+  left: 0px;
+  /*position: absolute;*/
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 0px;
+  top: 0px;
+  left: 0px;
+  /*position: absolute;*/
+ 
+}
+
+#merde {
+  margin: 0 auto;
+  top: 0px;
+  left: 0px;
+  /*position: absolute;*/
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+  /*position: absolute;*/
+}
+
+.pac-controls label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  /*position: absolute;*/
+}
+
+#pac-input {
+  color:#6bc2ca;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-left: 0px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 80%;
+  height: 40px;
+  text-align: center;
+  /*position: absolute;*/
+}
+
+#pac-input:focus {
+  border-color: #6bc2ca;
+  /*position: absolute;*/
+}
+
+#title {
+  color: #fff;
+  background-color: #af286f;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+  margin: 0 auto;
+  /*position: absolute;*/
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #6bc2ca;
+    opacity: 1; /* Firefox */
+    /*position: absolute;*/
+}
