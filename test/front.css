@@ -160,15 +160,19 @@ a {
 }
 
 # textoInfo {
-  color:#6bc2ca;
-  background-color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
   margin-left: 0px;
-  padding: 0 11px 0 13px;
+  padding: 0 11px 11px 13px;
   text-overflow: ellipsis;
   width: 80%;
   height: 40px;
+  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 18px;
   text-align: center;
+  
+  color:#231F20;
+  
 }
