@@ -159,13 +159,8 @@ a {
     /*position: absolute;*/
 }
 
-# textoInfo {
-  margin-left: 0px;
-  padding: 0 11px 11px 13px;
-  text-overflow: ellipsis;
-  width: 80%;
-  height: 40px;
-  
+#textoInfo {
+ 
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
