@@ -158,3 +158,16 @@ a {
     opacity: 1; /* Firefox */
     /*position: absolute;*/
 }
+
+#textoInfo {
+ 
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 18px;
+  text-align: center;
+  
+  color:#231F20;
+  
+}
